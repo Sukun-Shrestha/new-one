@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopEasy</title>
+    <link rel="stylesheet" href="shop.css" />
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <h2>EASYSHOP</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Search products...">
+                <button>Search</button>
+            </div>
+            <div class="cart">🛒 <span id="cart-count">0</span></div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to EASYSHOP</h1>
+        <p>Buy your favorite products online</p>
+    </section>
+
+    <section class="products">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Shoes">
+            <h3>Running Shoes</h3>
+            <p>$100</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" alt="Tshirt">
+            <h3>T-Shirt</h3>
+            <p>$90</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Side Bag</h3>
+            <p>$2240</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="data:image/jpeg;base64,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"
+                alt="Watch">
+            <h3>Rolex Watch</h3>
+            <p>$1M</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://media.gadgetbytenepal.com/2025/11/ASUS-TUF-Gaming-F16-2025-Review.jpg" alt="Laptop">
+            <h3>Asus TUF Gaming Laptop</h3>
+            <p>$1999</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://static-01.daraz.com.np/p/883e761527110a980e360e2e3d9483ab.jpg" alt="Bag">
+            <h3>School Bag</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://imageio.forbes.com/specials-images/imageserve/65621f720a47ac89c02b5eb7/Apple-AirPods-Max-in-blue-finish-/0x0.jpg?height=533&width=480&fit=bounds"
+                alt="AirPods">
+            <h3>AirPods Max 2</h3>
+            <p>$790</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
+            <h3>Watch</h3>
+            <p>$79</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+    </section>
+
+    <script src="shop.js"></script>
+</body>
+
+</html>
