@@ -50,7 +50,7 @@ h1 {
     }
 
     100% {
-        transform: rotate(-20deg);
+        transform: rotate(20deg);
         left: 0px;
     }
 }
@@ -58,8 +58,6 @@ h1 {
 .dance {
     animation: animated_div 5s 1;
 }
-
-
 
 h2 {
     cursor: pointer;
