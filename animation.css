@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(skyblue, white);
+}
+
+
+.scene {
+    position: relative;
+    width: 100vh;
+    cursor: pointer;
+}
+
+
+.tree {
+    width: 100%;
+    display: block;
+}
+
+
+.birds {
+    position: absolute;
+    top: 60px;
+    left: 160px;
+}
+
+.bird {
+    position: absolute;
+    font-size: 22px;
+    opacity: 0;
+}
+
+.b1 {
+    top: 0;
+    left: 0;
+}
+
+.b2 {
+    top: 10px;
+    left: 15px;
+}
+
+.b3 {
+    top: 20px;
+    left: -10px;
+}
+
+.scene:hover .bird {
+    opacity: 1;
+}
+
+.scene:hover .b1 {
+    animation: fly1 6s ease forwards;
+}
+
+.scene:hover .b2 {
+    animation: fly2 9s ease forwards;
+}
+
+.scene:hover .b3 {
+    animation: fly3 7s ease forwards;
+}
+
+
+@keyframes fly1 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(250px, -220px);
+        opacity: 0;
+    }
+}
+
+@keyframes fly2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(300px, -260px);
+        opacity: 0;
+    }
+}
+
+@keyframes fly3 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(350px, -200px);
+        opacity: 0;
+    }
+}
