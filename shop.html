@@ -11,27 +11,34 @@
 <body>
 
     <header>
-        <nav>
-            <h2>EASYSHOP</h2>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Contact</a></li>
+        <nav class="navbar">
+            <a href="#" class="logo">EASYSHOP</a></h2>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#product">Products</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#footer">Contact</a></li>
             </ul>
             <div class="search-box">
                 <input type="text" placeholder="Search products...">
                 <button>Search</button>
             </div>
+            <div class="menu-btn">☰</div>
             <div class="cart">🛒 <span id="cart-count">0</span></div>
         </nav>
     </header>
 
-    <section class="hero">
+    <section id="home" class="section-home">
         <h1>Welcome to EASYSHOP</h1>
         <p class="dance">Buy your favorite products online</p>
+        <div class="img">
+            <p>Our company has become a trendy shopping method ever since the Internet has made the
+                incremental advancement. </p>
+            <img src="./ChatGPT Image May 31, 2026, 01_36_34 PM.png">
+        </div>
     </section>
 
-    <section class="products">
+    <section id="product" class="section">
         <div class="card">
             <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Shoes">
             <h3>Running Shoes</h3>
@@ -132,57 +139,63 @@
             <button onclick="addToCart()">Add to Cart</button>
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
-            <h3>Watch</h3>
-            <p>$79</p>
+            <img src="https://www.cnet.com/a/img/resize/b3315b9ef8f002f19e767113bef4be0ecf14e376/hub/2021/03/12/b3f1bae0-a41e-474e-af92-0c6be9a4db94/glorious-model-o-wired-gaming-mouse.jpg?auto=webp&fit=crop&height=900&width=1200"
+                alt="Mouse">
+            <h3>Gaming Mouse</h3>
+            <p>$90</p>
             <button onclick="addToCart()">Add to Cart</button>
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
-            <h3>Watch</h3>
-            <p>$79</p>
+            <img src="https://projector.sg/wp-content/uploads/2023/11/optoma_CinemaX_D2_01.webp" alt="Projector">
+            <h3>Projector</h3>
+            <p>$1999</p>
             <button onclick="addToCart()">Add to Cart</button>
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
-            <h3>Watch</h3>
-            <p>$79</p>
+            <img src="https://static-01.daraz.com.np/p/502361a5b96aceb6aba67c7959b40e24.jpg" alt="Induction">
+            <h3>Yasuda 2 Burner Infrared Cooktop Induction</h3>
+            <p>$355</p>
             <button onclick="addToCart()">Add to Cart</button>
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
-            <h3>Watch</h3>
-            <p>$79</p>
+            <img src="https://brother-mart.com/cdn/shop/files/infinix-note-60-pro-price-in-nepal-buy-now_jpg.png?v=1774010730&width=900"
+                alt="Phone">
+            <h3>infinix note 60 pro</h3>
+            <p>$790</p>
             <button onclick="addToCart()">Add to Cart</button>
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
-            <h3>Watch</h3>
-            <p>$79</p>
+            <img src="https://bigbyte.com.np/wp-content/uploads/2021/04/16-inch-macbook-pro-2019-price-nepal.jpg"
+                alt="MacBook">
+            <h3>Apple MacBook Pro 16-inch</h3>
+            <p>$4999</p>
             <button onclick="addToCart()">Add to Cart</button>
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
-            <h3>Watch</h3>
-            <p>$79</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQDoDF4qNTgDxXdCNl2IIrCAMkzZyL4o6KIw&s"
+                alt="Camera">
+            <h3>Sony Alpha 9 III</h3>
+            <p>$7999</p>
             <button onclick="addToCart()">Add to Cart</button>
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
-            <h3>Watch</h3>
-            <p>$79</p>
+            <img src="https://media.gadgetbytenepal.com/2026/03/Samsung-Galaxy-S26-Ultra-Rear-Design.jpg" alt="Phone">
+            <h3>Galaxy S26 Ultra (16+1TB)</h3>
+            <p>$1999</p>
             <button onclick="addToCart()">Add to Cart</button>
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
-            <h3>Watch</h3>
-            <p>$79</p>
+            <img src="https://nagmani.com.np/media/catalog/product/cache/0e2619cacdf8b7664ab70c5f4c36d5fb/n/e/new_project_-_2025-07-31t132123.330.png"
+                alt="Laptop">
+            <h3>Lenovo Legion Pro 7i Gaming Laptop</h3>
+            <p>$7989</p>
             <button onclick="addToCart()">Add to Cart</button>
         </div>
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Watch">
-            <h3>Watch</h3>
-            <p>$79</p>
+            <img src="https://assets2.razerzone.com/images/pnx.assets/68480e6e8b7d7fb4816a86d7bba2515f/firefly-v2.webp"
+                alt="Mouse pad">
+            <h3>LED Mousepad</h3>
+            <p>$22</p>
             <button onclick="addToCart()">Add to Cart</button>
         </div>
         <div class="card">
@@ -350,7 +363,7 @@
         </div>
     </section>
 
-    <section class="reviews">
+    <section class="reviews" id="reviews">
         <h2>Customer Reviews</h2>
 
         <div class="review-container">
@@ -373,10 +386,99 @@
                 <span>- Suman</span>
             </div>
 
+            <div class="review-card">
+                <h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+                <p>"Product came exactly as shown. Highly recommended."</p>
+                <span>- Suman</span>
+            </div>
+
+            <div class="review-card">
+                <h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+                <p>"Product came exactly as shown. Highly recommended."</p>
+                <span>- Suman</span>
+            </div>
+
+            <div class="review-card">
+                <h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+                <p>"Product came exactly as shown. Highly recommended."</p>
+                <span>- Suman</span>
+            </div>
+
+            <div class="review-card">
+                <h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+                <p>"Product came exactly as shown. Highly recommended."</p>
+                <span>- Suman</span>
+            </div>
+
+            <div class="review-card">
+                <h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+                <p>"Product came exactly as shown. Highly recommended."</p>
+                <span>- Suman</span>
+            </div>
+
+            <div class="review-card">
+                <h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+                <p>"Product came exactly as shown. Highly recommended."</p>
+                <span>- Suman</span>
+            </div>
+
+            <div class="review-card">
+                <h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+                <p>"Product came exactly as shown. Highly recommended."</p>
+                <span>- Suman</span>
+            </div>
+
+            <div class="review-card">
+                <h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+                <p>"Product came exactly as shown. Highly recommended."</p>
+                <span>- Suman</span>
+            </div>
+
+            <div class="review-card">
+                <h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+                <p>"Product came exactly as shown. Highly recommended."</p>
+                <span>- Suman</span>
+            </div>
+
+            <div class="review-card">
+                <h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+                <p>"Product came exactly as shown. Highly recommended."</p>
+                <span>- Suman</span>
+            </div>
+
+            <div class="review-card">
+                <h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+                <p>"Product came exactly as shown. Highly recommended."</p>
+                <span>- Suman</span>
+            </div>
+
+            <div class="review-card">
+                <h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+                <p>"Product came exactly as shown. Highly recommended."</p>
+                <span>- Suman</span>
+            </div>
+
+            <div class="review-card">
+                <h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+                <p>"Product came exactly as shown. Highly recommended."</p>
+                <span>- Suman</span>
+            </div>
+
+            <div class="review-card">
+                <h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+                <p>"Product came exactly as shown. Highly recommended."</p>
+                <span>- Suman</span>
+            </div>
+
+            <div class="review-card">
+                <h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+                <p>"Product came exactly as shown. Highly recommended."</p>
+                <span>- Suman</span>
+            </div>
         </div>
     </section>
     <footer class="footer">
-        <div class="footer-grid">
+        <div class="footer-grid" id="footer">
 
             <div class="footer-card">
                 <h3>About Us</h3>

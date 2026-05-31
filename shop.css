@@ -2,164 +2,216 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial;
+    font-family: sans-serif;
 }
 
 body {
     background: #f5f5f5;
 }
 
-nav {
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px 6%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background: #222;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.navbar.active {
+    background: #111;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+}
+
+.logo {
     color: white;
+    font-size: 28px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-h1 {
-    color: #111;
-    animation: animated_div 5s 1;
-}
-
-@keyframes animated_div {
-    0% {
-        animation: animated_div 5s 1;
-        left: 0px;
-    }
-
-    25% {
-        transform: rotate(20deg);
-        left: 0px;
-    }
-
-    50% {
-        transform: rotate(-20deg);
-        left: 500px;
-    }
-
-    55% {
-        transform: rotate(20deg);
-        left: 500px;
-    }
-
-    70% {
-        transform: rotate(-20deg);
-        left: 500px;
-    }
-
-    100% {
-        transform: rotate(20deg);
-        left: 0px;
-    }
-}
-
-.dance {
-    animation: animated_div 5s 1;
-}
-
-h2 {
-    cursor: pointer;
-}
-
-h2:hover {
-    color: rgb(38, 38, 234);
-}
-
-nav ul {
+.nav-menu {
     display: flex;
     list-style: none;
     gap: 20px;
 }
 
-nav ul li a {
-    color: white;
+.nav-menu a {
     text-decoration: none;
-    font-size: 20px;
-}
-
-nav ul li a:hover {
-    color: #1259d6;
-}
-
-.search-box {
-    display: flex;
-    gap: 5px;
-}
-
-.search-box input {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-}
-
-.search-box button {
-    padding: 8px 15px;
-    border: none;
-    background: #0d6efd;
     color: white;
-    border-radius: 5px;
+    transition: .3s;
+}
+
+.nav-menu a.active {
+    color: #ff4d4d;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    color: white;
     cursor: pointer;
 }
 
-.search-box button:hover {
-    background: #084fc7;
+h1 {
+
+    position: relative;
+    animation: slideCenter 2s ease-out forwards;
+}
+
+@keyframes slideCenter {
+    from {
+        transform: translateX(-600px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.dance {
+    animation: slide 4s ease-out forwards;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(600px);
+        opacity: 0;
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+}
+
+.img {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.img p {
+    font-size: 20px;
+    line-height: 1.6;
+    position: relative;
+    animation: word 5s ease-out forwards;
+}
+
+@keyframes word {
+    from {
+        transform: translateX(-600px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.img img {
+    width: 80%;
+    max-width: 900px;
+    border-radius: 12px;
+    margin-left: 100px;
+    position: relative;
+    animation: image 5s ease-out forwards;
+}
+
+@keyframes image {
+    from {
+        transform: translateX(600px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.section-home {
+    min-height: 100vh;
+    background: linear-gradient(to right, #111, #333);
+    color: white;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.section-home h1 {
+    font-size: 3rem;
+}
+
+
+.section {
+    padding: 100px 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
 }
 
 .cart {
     font-size: 20px;
-}
-
-.hero {
-    text-align: center;
-    padding: 60px 20px;
     color: white;
-    background: linear-gradient(135deg, #150849, #2575fc);
-}
-
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 70px;
-    padding: 30px;
-
 }
 
 .card {
     background: white;
-    padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
+    overflow: hidden;
     text-align: center;
-    box-shadow: 70px 70px 70px 70px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    padding: 20px;
+
+    opacity: 0;
+    transform: translateY(40px) scale(1);
+
+    transition: transform 0.4s ease, background-color 0.4s ease;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(40px) scale(1.08);
     background-color: grey;
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.card.show:hover {
+    transform: translateY(0) scale(1.08);
 }
 
 .card img {
     width: 100%;
-    height: 220px;
+    height: 250px;
     object-fit: cover;
-    border-radius: 8px;
 }
 
-.card button {
-    margin-top: 10px;
+button {
     padding: 10px 20px;
     border: none;
-    background: #2575fc;
+    background: black;
     color: white;
-    border-radius: 5px;
     cursor: pointer;
+    margin-top: 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
-.card button:hover {
-    background: #1259d6;
+button:hover {
+    background: #333;
+    transform: scale(1.05);
 }
 
 .footer {
@@ -170,7 +222,7 @@ nav ul li a:hover {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
     max-width: 1200px;
     margin: auto;
@@ -254,14 +306,29 @@ nav ul li a:hover {
     color: #222;
 }
 
-@media(max-width:768px) {
-    nav {
-        flex-direction: column;
-        gap: 10px;
+@media (max-width: 768px) {
+
+    .menu-btn {
+        display: block;
     }
 
-    nav ul {
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: black;
         flex-direction: column;
         text-align: center;
+        padding: 20px 0;
+        transition: .3s;
+    }
+
+    .nav-menu.show {
+        left: 0;
+    }
+
+    .section-home h1 {
+        font-size: 2rem;
     }
 }
