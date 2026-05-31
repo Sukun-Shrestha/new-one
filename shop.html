@@ -19,9 +19,14 @@
                 <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#footer">Contact</a></li>
             </ul>
-            <div class="search-box">
-                <input type="text" placeholder="Search products...">
-                <button>Search</button>
+            <div class="search-wrapper" id="searchWrapper">
+                <input type="text" placeholder="Search products..." id="searchInput">
+
+                <button onclick="toggleSearch()">
+                    <img src="./icons8-search-50.png" alt="search icon">
+                </button>
+            </div>
+            </div>
             </div>
             <div class="menu-btn">☰</div>
             <div class="cart">🛒 <span id="cart-count">0</span></div>

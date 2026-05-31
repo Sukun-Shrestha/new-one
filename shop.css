@@ -5,6 +5,10 @@
     font-family: sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: #f5f5f5;
 }
@@ -15,13 +19,14 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 18px 6%;
+    z-index: 1000;
+    transition: 0.3s;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
-    transition: 0.3s;
+    padding: 12px 20px;
 }
+
 
 .navbar.active {
     background: #111;
@@ -33,6 +38,10 @@ body {
     font-size: 28px;
     text-decoration: none;
     font-weight: bold;
+}
+
+.logo:hover {
+    color: #868484;
 }
 
 .nav-menu {
@@ -48,7 +57,7 @@ body {
 }
 
 .nav-menu a.active {
-    color: #ff4d4d;
+    color: #868484;
 }
 
 .menu-btn {
@@ -138,6 +147,66 @@ h1 {
     }
 }
 
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-wrapper input {
+    width: 0;
+    opacity: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.search-wrapper.active input {
+    width: 220px;
+    max-width: 60vw;
+    opacity: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.search-wrapper button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-wrapper button img {
+    width: 22px;
+    height: 22px;
+}
+
+@media (max-width: 768px) {
+    .search-wrapper.active input {
+        width: 160px;
+        max-width: 55vw;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .search-wrapper.active input {
+        width: 120px;
+        max-width: 65vw;
+        font-size: 14px;
+    }
+
+    .search-wrapper button img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
 .section-home {
     min-height: 100vh;
     background: linear-gradient(to right, #111, #333);
@@ -158,6 +227,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
+    scroll-margin-top: 80px;
 }
 
 .cart {
@@ -166,7 +236,7 @@ h1 {
 }
 
 .card {
-    background: white;
+    background: rgb(218, 218, 218);
     border-radius: 12px;
     overflow: hidden;
     text-align: center;
@@ -266,7 +336,8 @@ button:hover {
 .reviews {
     padding: 60px 20px;
     text-align: center;
-    background: linear-gradient(135deg, #150849, #2575fc);
+    background: linear-gradient(to right, #111, #333);
+    color: white;
 }
 
 .reviews h2 {
@@ -293,7 +364,7 @@ button:hover {
 .review-card:hover {
     transform: translateY(-6px) scale(1.02);
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
-    background-color: #c2d2eb;
+    background-color: #b7b8bb;
 }
 
 .review-card p {

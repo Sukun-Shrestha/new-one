@@ -5,7 +5,6 @@ function addToCart() {
     document.getElementById("cart-count").innerText = count;
 }
 
-// NAVBAR BACKGROUND ON SCROLL
 window.addEventListener("scroll", () => {
     const navbar = document.querySelector(".navbar");
 
@@ -17,21 +16,19 @@ window.addEventListener("scroll", () => {
 });
 
 
-// CARD ANIMATION ON SCROLL
 const cards = document.querySelectorAll(".card");
 
 window.addEventListener("scroll", () => {
     cards.forEach(card => {
         const top = card.getBoundingClientRect().top;
 
-        if (top < window.innerHeight - 100) {
+        if (top < window.innerHeight - 150) {
             card.classList.add("show");
         }
     });
 });
 
 
-// ACTIVE NAV LINK ON SCROLL
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-menu a");
 
@@ -56,10 +53,33 @@ window.addEventListener("scroll", () => {
 });
 
 
-// MOBILE MENU
 const menuBtn = document.querySelector(".menu-btn");
 const navMenu = document.querySelector(".nav-menu");
 
 menuBtn.addEventListener("click", () => {
     navMenu.classList.toggle("show");
+});
+
+function toggleSearch() {
+    document.getElementById("searchWrapper").classList.toggle("active");
+}
+
+document.querySelectorAll('.nav-menu a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+
+        e.preventDefault();
+
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+
+        }
+    });
 });
